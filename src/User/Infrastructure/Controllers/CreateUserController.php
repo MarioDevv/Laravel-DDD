@@ -3,10 +3,8 @@
 namespace Src\User\Infrastructure\Controllers;
 
 use Src\User\Domain\User;
-use App\Models\SimpleUser;
 use Illuminate\Http\Request;
 use Src\User\Application\CreateUserUseCase;
-use Src\User\Infrastructure\Repository\UserRepository;
 use Src\User\Domain\ValueObjects\Email;
 use Src\User\Domain\ValueObjects\Name;
 
@@ -16,7 +14,6 @@ class CreateUserController extends \App\Http\Controllers\Controller
 
     public function __construct(private CreateUserUseCase $createUserUseCase)
     {
-        $this->createUserUseCase = new CreateUserUseCase(new UserRepository(new SimpleUser()));
     }
 
 

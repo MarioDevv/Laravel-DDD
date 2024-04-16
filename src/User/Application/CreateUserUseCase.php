@@ -10,6 +10,7 @@ final class CreateUserUseCase
 {
     public function __construct(private UserContract $contract)
     {
+        $this->contract = $contract;
     }
 
     public function __invoke(User $user): void

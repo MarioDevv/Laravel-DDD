@@ -10,11 +10,10 @@ use Src\User\Infrastructure\Repository\UserRepository;
 class GetUserByIdController extends \App\Http\Controllers\Controller
 {
 
-    private GetUserByIdUseCase $getUserByIdUseCase;
+    
 
-    public function __construct()
+    public function __construct(private GetUserByIdUseCase $getUserByIdUseCase)
     {
-        $this->getUserByIdUseCase = new GetUserByIdUseCase(new UserRepository(new SimpleUser()));
     }
 
 
